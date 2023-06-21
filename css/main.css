@@ -657,6 +657,10 @@ video {
   clear: none;
 }
 
+.m-6 {
+  margin: 1.5rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -764,20 +768,12 @@ video {
   display: none;
 }
 
-.h-44 {
-  height: 11rem;
-}
-
 .h-8 {
   height: 2rem;
 }
 
-.w-1\/2 {
-  width: 50%;
-}
-
-.w-1 {
-  width: 0.25rem;
+.w-screen {
+  width: 100vw;
 }
 
 .flex-shrink {
@@ -1300,6 +1296,10 @@ video {
   gap: 1.25rem;
 }
 
+.gap-9 {
+  gap: 2.25rem;
+}
+
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
@@ -1732,6 +1732,10 @@ video {
   border-color: hsla(42, 100%, 97%, 1);
 }
 
+.border-b-cream {
+  border-bottom-color: hsla(42, 100%, 97%, 1);
+}
+
 .bg-\[rgb\(255\2c 0\2c 0\)\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
@@ -1748,11 +1752,6 @@ video {
 
 .bg-red {
   background-color: hsla(9, 74%, 23%, 1);
-}
-
-.bg-rose-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(244 63 94 / var(--tw-bg-opacity));
 }
 
 .bg-slate-500 {
@@ -1870,11 +1869,6 @@ video {
      object-fit: scale-down;
 }
 
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -1893,6 +1887,10 @@ video {
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
+}
+
+.pb-5 {
+  padding-bottom: 1.25rem;
 }
 
 .text-left {
@@ -1951,14 +1949,14 @@ video {
   vertical-align: super;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
-}
-
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
 }
 
 .text-sm {
@@ -1979,8 +1977,8 @@ video {
   font-weight: 300;
 }
 
-.font-medium {
-  font-weight: 500;
+.font-normal {
+  font-weight: 400;
 }
 
 .font-semibold {
@@ -2053,14 +2051,6 @@ video {
 .stacked-fractions {
   --tw-numeric-fraction: stacked-fractions;
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
-}
-
-.leading-3 {
-  line-height: .75rem;
-}
-
-.leading-10 {
-  line-height: 2.5rem;
 }
 
 .leading-relaxed {
