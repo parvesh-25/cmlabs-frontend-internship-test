@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="../../css/main.css">
     <title>Document</title>
 </head>
-<body class="bg-red">
+<body >
     <!-- nav -->
     <nav class="flex items-center justify-center h-8 py-10 bg-red border-b border-cream">
         <h2 class="text-xl rounded-xl font-semibold py-1 px-3 text-red bg-cream">FoodieFaves</h2>
     </nav>
     <!-- content -->
-    <section>
+    <section class="bg-red">
         <div class="container content-center flex flex-col justify-center align- bg-blue-400 py-10 px-5 gap-5">
             <!-- title -->
             <h1 class="text-cream font-bold text-5xl text-center uppercase tracking-wide">Recipes category</h1>
@@ -20,13 +20,14 @@
             <p class="text-cream font-light text-center text-sm">Explore a treasure trove of culinary delights with FoodieFaves' recipe categories, bringing you a world of mouthwatering dishes to savor and enjoy.</p>
 
             <div  class="container bg-slate-500 ">
-              <div id="categoryList" class="flex flex-wrap gap-4">
-              </div>
+              <ul id="categoryList" class="flex flex-wrap gap-4">
+              </ul>
             </div>
         </div>
     </section>     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../api.js"></script>
+
 </body>
 </html>
 
