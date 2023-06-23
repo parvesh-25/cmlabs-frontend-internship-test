@@ -5,61 +5,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
+     <!-- Aos -->
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>Document</title>
 </head>
 
 <body>
     <!-- nav -->
-    <nav
-        class=" sticky top-0 z-10 flex px-5  flex-row items-center justify-between  py-4 bg-red border-b border-cream md:py-5 md:px-8 lg:py-5">
-        <a id="backBtn" href=""> <svg width="46" height="46" viewBox="0 0 46 46" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M36.4167 21.0834H15.0076L24.3609 11.7301C25.1084 10.9826 25.1084 9.75589 24.3609 9.00839C24.1836 8.83071 23.973 8.68975 23.7411 8.59356C23.5092 8.49738 23.2607 8.44788 23.0096 8.44788C22.7586 8.44788 22.5101 8.49738 22.2782 8.59356C22.0463 8.68975 21.8357 8.83071 21.6584 9.00839L9.02756 21.6392C8.84988 21.8165 8.70891 22.0272 8.61273 22.259C8.51655 22.4909 8.46704 22.7395 8.46704 22.9905C8.46704 23.2415 8.51655 23.4901 8.61273 23.7219C8.70891 23.9538 8.84988 24.1644 9.02756 24.3417L21.6584 36.9726C21.8358 37.15 22.0465 37.2908 22.2784 37.3868C22.5102 37.4828 22.7587 37.5323 23.0096 37.5323C23.2606 37.5323 23.5091 37.4828 23.7409 37.3868C23.9728 37.2908 24.1834 37.15 24.3609 36.9726C24.5383 36.7951 24.6791 36.5844 24.7751 36.3526C24.8712 36.1208 24.9206 35.8723 24.9206 35.6213C24.9206 35.3704 24.8712 35.1219 24.7751 34.89C24.6791 34.6582 24.5383 34.4475 24.3609 34.2701L15.0076 24.9167H36.4167C37.4709 24.9167 38.3334 24.0542 38.3334 23.0001C38.3334 21.9459 37.4709 21.0834 36.4167 21.0834Z"
-                    fill="#FFFAEE" />
+    <nav class="sticky top-0 z-10 flex px-5 flex-row items-center justify-between py-4 bg-red border-b border-cream md:py-5 md:px-8 lg:py-5">
+        <div class="flex items-center">
+          <a id="backBtn" href="">
+            <svg width="30" height="30" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M36.4167 21.0834H15.0076L24.3609 11.7301C25.1084 10.9826 25.1084 9.75589 24.3609 9.00839C24.1836 8.83071 23.973 8.68975 23.7411 8.59356C23.5092 8.49738 23.2607 8.44788 23.0096 8.44788C22.7586 8.44788 22.5101 8.49738 22.2782 8.59356C22.0463 8.68975 21.8357 8.83071 21.6584 9.00839L9.02756 21.6392C8.84988 21.8165 8.70891 22.0272 8.61273 22.259C8.51655 22.4909 8.46704 22.7395 8.46704 22.9905C8.46704 23.2415 8.51655 23.4901 8.61273 23.7219C8.70891 23.9538 8.84988 24.1644 9.02756 24.3417L21.6584 36.9726C21.8358 37.15 22.0465 37.2908 22.2784 37.3868C22.5102 37.4828 22.7587 37.5323 23.0096 37.5323C23.2606 37.5323 23.5091 37.4828 23.7409 37.3868C23.9728 37.2908 24.1834 37.15 24.3609 36.9726C24.5383 36.7951 24.6791 36.5844 24.7751 36.3526C24.8712 36.1208 24.9206 35.8723 24.9206 35.6213C24.9206 35.3704 24.8712 35.1219 24.7751 34.89C24.6791 34.6582 24.5383 34.4475 24.3609 34.2701L15.0076 24.9167H36.4167C37.4709 24.9167 38.3334 24.0542 38.3334 23.0001C38.3334 21.9459 37.4709 21.0834 36.4167 21.0834Z" fill="#FFFAEE" />
             </svg>
-        </a>
-        <div class="logo flex w-8/12 justify-start bg-slate-700">
-            <a href="./index.html" class="text-xl rounded-xl font-semibold py-1 px-3 text-red bg-cream md:text-3xl xl:text-[32px]">FoodieFaves</a>
+          </a>
         </div>
-    </nav>
+        <div class="logo flex w-8/12 justify-center">
+          <a href="./index.html" id="logBtn" class="text-xl rounded-xl font-semibold py-1 px-3 text-red bg-cream md:text-3xl xl:text-[32px]">FoodieFaves</a>
+        </div>
+        <div></div> <!-- Penambahan elemen kosong untuk memberikan ruang agar logoBtn selalu berada di tengah -->
+      </nav>
+      
 
     <section class="bg-red">
-        <div class="container max-w-max content-center flex flex-col justify-between items-center py-10  px-5 gap-9 md:px-8">
+        <div class=" max-w-full content-center flex flex-col justify-between items-center py-10  px-5 gap-9 md:px-8">
             <!-- text -->
             <p class="text-cream font-normal  italic text-sm text-center  tracking-wide leading-relaxed md:text-lg lg:text-lg">Meal Recipe</p>
             <!-- meals title -->
-            <h1 id="detailTitle" class="font-medium text-center text-3xl text-cream md:text-5xl lg:text-6xl xl:text-[64px]"></h1>
+            <h1 id="detailTitle" data-aos="zoom-in-down" data-aos-duration="2000" data-aos-anchor-placement="bottom-bottom"  class="font-medium text-center text-3xl text-cream md:text-5xl lg:text-6xl xl:text-[64px]"></h1>
 
-            <img id="detailImg" src="" alt="" class="w-screen h-60 object-center md:h-96 lg:h-[34rem] xl:h-[80vh] ">
+            <img id="detailImg" data-aos="zoom-in-up" data-aos-duration="2000"  src="" alt="" class="w-screen h-60 object-cover md:h-96 lg:h-[34rem] xl:h-[80vh] ">
 
             <!-- Ingridient -->
-            <div class="ingridient container flex flex-col min-w-max   justify-start gap-5 lg:gap-7">
+            <div data-aos="fade-up" data-aos-duration="2000" class="ingridient w-full flex flex-col min-w-max   justify-start gap-5 lg:gap-7">
                 <p class="text-cream text-xl pb-5 border-b border-cream  font-semibold md:text-2xl lg:text-[26px] lg:leading-normal">Ingridients</p>
                 <p id="detailIngridient" class="text-sm font-normal text-cream tracking-wide md:text-lg"></p>
             </div>
 
             <!-- instruction -->
-            <div class="instruction container flex flex-col justify-start gap-5 lg:gap-7">
+            <div data-aos="fade-up" data-aos-duration="2500" class="instruction w-full flex flex-col justify-start gap-5 lg:gap-7">
                 <p class="text-cream text-xl pb-5 border-b border-cream  font-semibold md:text-2xl lg:text-[26px]">Instruction</p>
-                <p id="detailInstruct" class="text-sm font-normal leading-relaxed text-cream tracking-wide md:text-lg"></p>
+                <p id="detailInstruct" class="text-sm font-normal leading-relaxed text-cream tracking-wide md:text-lg lg:leading-relaxed"></p>
             </div>
             <!-- Tutorials -->
-            <div class="tutorial container flex flex-col justify-start items gap-5 lg:gap-7">
+            <div data-aos="fade-up" data-aos-duration="2000" class="tutorial w-full flex flex-col justify-start items gap-5 lg:gap-7">
                 <p class="text-cream text-xl pb-5 border-b border-cream  font-semibold md:text-2xl lg:text-[26px]">Watch Tutorials</p>
-                <div class="container flex flex-col items-center w-full ">
-                    <iframe id="detailTutor" class="h-52  w-3/4 md:h-96 xl:w-3/5 xl:h-[60vh] " src="" title="YouTube video player" frameborder="0"
+                <div data-aos="flip-up" data-aos-duration="3000" class="flex flex-col items-center w-full ">
+                    <iframe id="detailTutor"  class="h-52  w-3/4 sm:h-64 md:h-96 xl:w-3/5 xl:h-[60vh] " src="" title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </section>
-
+    <script>
+        AOS.init();
+      </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
         integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../api.js"></script>
 </body>
-
 </html>

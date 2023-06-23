@@ -1,29 +1,34 @@
+
+
 // import axios from "axios";
 
 // category
 $.ajax({
-    url: 'https://www.themealdb.com/api/json/v1/1/categories.php',
-    method: 'GET',
-    success: function(response) {
-      var categoryList = $('#categoryList');
-      // Loop melalui setiap kategori
-      $.each(response.categories, function(index, category) {
-        var card = '<a href="./category.html?category=' + category.strCategory + '"  id="cardCategory" class="bg-cream py-10  flex flex-col justify-between  items-center rounded-xl">';
-        card += '<h3 class="listTitle text-xl font-semibold">' + category.strCategory + '</h3>';
-        card += '<img class="" src="' + category.strCategoryThumb + '" alt="' + category.strCategory + '">';
-        card += '</a>';
-        // Tambahkan card ke dalam dataContainer
-        categoryList.append(card);
-      });
-    },
-    error: function(xhr, status, error) {
-      console.log(error);
-    }
+  url: 'https://www.themealdb.com/api/json/v1/1/categories.php',
+  method: 'GET',
+  success: function (response) {
+    var categoryList = $('#categoryList');
+    // Loop melalui setiap kategori
+    $.each(response.categories, function (index, category) {
+      var card = '<div class="cardWrapper w-1/2 px-2 md:w-1/3 lg:w-1/4 lg:px-4  ">';
+      card += '<a href="./category.html?category=' + category.strCategory + '" id="cardCategory" class="bg-cream py-6  flex flex-col justify-between items-center rounded-xl  lg:py-7">';
+      card += '<h3 class="listTitle text-xl font-semibold  text-center mb-8 sm:mb-10 md:text-[28px] md:mb-14 lg:mb-16 xl:mb-24">' + category.strCategory + '</h3>';
+      card += '<img class="p-2 rounded-xl md:rounded-2xl" src="' + category.strCategoryThumb + '" alt="' + category.strCategory + '">';
+      card += '</a>';
+      card += '</div>';
+
+      // Tambahkan card ke dalam dataContainer
+      categoryList.append(card);
+    });
+  },
+  error: function (xhr, status, error) {
+    console.log(error);
+  }
 });
 
 
 
-// Category Detail
+/// Category Detail
 
 // Mendapatkan nilai parameter category-name dari URL
 const urlParams = new URLSearchParams(window.location.search);
@@ -34,23 +39,22 @@ const categoryURL = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=' + ca
 $.ajax({
   url: categoryURL,
   method: 'GET',
-  success: function(response) {
+  success: function (response) {
     var mealList = $('#mealList');
     // Loop melalui setiap makanan
-    $.each(response.meals, function(index, meal) {
-      var card = '<a href="./meal-detail.html?meal=' + meal.idMeal+ '" class="mealCard cardWithOverlay items-end justify-center flex  hover:border-cream md:w-1/2 lg:w-1/3 xl:h-1/4">';
-      card += '<img src="' + meal.strMealThumb + '" alt="' + meal.strMeal + '" class="mealImage">';
-      card += '<h3 id="mealTitle" class="absolute m-6 text-cream font-semibold text-xl text-center ">' + meal.strMeal + '</h3>';
+    $.each(response.meals, function (index, meal) {
+      var card = '<a id="mealCard"  href="./meal-detail.html?meal=' + meal.idMeal + '" class=" cardWithOverlay items-end justify-center flex  md:w-1/2 xl:w-1/3">';
+      card += '<img id="mealImage" src="' + meal.strMealThumb + '" alt="' + meal.strMeal + '" class=" w-screen object-cover sm:h-96 lg:h-auto">';
+      card += '<h3 id="mealTitle" class="absolute m-6 text-cream font-semibold text-2xl  text-center md:text-[28px]  ">' + meal.strMeal + '</h3>';
       card += '</a>';
       // Tambahkan card ke dalam mealList
       mealList.append(card);
     });
   },
-  error: function(xhr, status, error) {
+  error: function (xhr, status, error) {
     console.log(error);
   }
 });
-
 
 // Meal Detail
 // Mendapatkan nilai parameter meal-id dari URL
@@ -61,14 +65,17 @@ const mealURL = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + mealId
 $.ajax({
   url: mealURL,
   method: 'GET',
-  success: function(response) {
+  success: function (response) {
     var meal = response.meals[0];
     // Tampilkan detail makanan
     $('#detailTitle').text(meal.strMeal);
     $('#detailImg').attr('src', meal.strMealThumb);
     $('#detailInstruct').text(meal.strInstructions);
+
     // Tampilkan video tutorial (jika tersedia)
-    $('#detailTutor').attr('src', meal.strYoutube);
+    const youtubeLink = meal.strYoutube;
+    const youtubeEmbedLink = youtubeLink.replace('watch?v=', 'embed/');
+    $('#detailTutor').attr('src', youtubeEmbedLink);
 
     // Bahan-bahan
     var ingredients = [];
@@ -82,17 +89,16 @@ $.ajax({
     var ingredientsList = ingredients.map(ingredient => '<li>' + ingredient + '</li>').join('');
     $('#detailIngridient').html(ingredientsList);
   },
-  error: function(xhr, status, error) {
+  error: function (xhr, status, error) {
     console.log(error);
   }
 });
 
 
 // Back Button
-  $(document).ready(function() {
-    $('#backBtn').on('click', function(e) {
-      e.preventDefault();
-      window.history.back();
-    });
+$(document).ready(function () {
+  $('#backBtn').on('click', function (e) {
+    e.preventDefault();
+    window.history.back();
   });
-  
+});
